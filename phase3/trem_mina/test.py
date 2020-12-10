@@ -6,11 +6,11 @@ success = 0
 fail_timeout = 0
 fail_wrong = 0
 total = 0
-timeout = 6
+timeout = 3
 
 
 def run_test(fname, pipe_end):
-    res = os.popen("cat {} | python3 candidatas.py".format(fname)).read()
+    res = os.popen("cat {} | python3 trem_mina.py".format(fname)).read()
     expected = os.popen("cat {}".format(fname.replace("in", "sol"))).read()
     pipe_end.send(res == expected)
 
